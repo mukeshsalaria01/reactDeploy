@@ -57,21 +57,21 @@ class Ribbon extends Component {
                                             <input type="password" className="form-control" name="Password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
                                         </div>
                                         <div className="col">
-                                            <button type="button" id="btnLogin1" onClick={this.login} className="btn btn-secondary">Log In</button>
+                                            <button type="button" id="btnLogin1" onClick={this.login} style={{ backgroundColor: '#1baa81' }} className="btn btn-secondary">Log In</button>
                                         </div>
                                     </div>
                                     {showError && <span id="logInError"> Invalid username & password.</span>}
 
                                 </form>}
 
-                                {showDetails && <div className="dropdown"><button className="btn btn-secondary" type="button" onClick={this.onPageOpen}>Page Property</button></div>}
+                                {showDetails && <div className="dropdown"><button className="btn btn-secondary" style={{ backgroundColor: '#1baa81' }} type="button" onClick={this.onPageOpen}>Page Property</button></div>}
 
                             </div>
                         </div>
                     </div>
                 </div>
                 <button onClick={this.chackToken} className="btn bg-dark text-white float-right collapse-btn" type="button" id="collapse-button" data-toggle="collapse"
-                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
                     <span >+</span>
                 </button>
 
