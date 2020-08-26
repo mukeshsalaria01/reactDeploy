@@ -11,17 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.togglenav-section-area {
+.dpm-togglenav-section-area {
     position: fixed;
     width: 100%;
 }
 
-.nav-area {
+.dpm-nav-area {
     background: black;
     padding: 1.25rem;
 }
 
-.input-field {
+.dpm-input-field {
     height: 25px;
     padding: .375rem .75rem;
     line-height: 1.5;
@@ -31,12 +31,12 @@ code {
     width: 250px;
 }
 
-    .input-field:focus,
-    .login-btn-area:focus {
+    .dpm-input-field:focus,
+    .dpm-login-btn-area:focus {
         outline: none;
     }
 
-.login-btn-area {
+.dpm-login-btn-area {
     height: 39px;
     border-radius: .25rem;
     border: 1px solid #1baa81;
@@ -45,7 +45,7 @@ code {
     color: white;
 }
 
-.toggle-btn-area {
+.dpm-toggle-btn-area {
     background: black;
     padding: 20px;
     border-radius: 0px 0px 0px 50px;
@@ -55,7 +55,7 @@ code {
     color: white;
 }
 
-.plus-icon-area {
+.dpm-plus-icon-area {
     position: relative;
     top: -5px;
     left: 3px;

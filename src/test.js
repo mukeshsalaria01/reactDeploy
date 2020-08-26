@@ -42,22 +42,22 @@ class Ribbon extends Component {
 
         return (
             <>
-                <section className="togglenav-section-area">
-                    {open && <div className="nav-area">
+                <section className="dpm-togglenav-section-area">
+                    {open && <div className="dpm-nav-area">
                         <div align="center">
 
                             {showLogin && <form id="login" >
-                            <input type="text" placeholder="User Name" name="Username" className="input-field" value={this.state.username} onChange={this.handleChange} />
-                            <input type="password" placeholder="Password" name="Password" className="input-field" value={this.state.password} onChange={this.handleChange} />
-                            <button type="button" className="login-btn-area" onClick={this.login}>Log In</button>
+                                <input type="text" placeholder="User Name" name="Username" className="dpm-input-field" value={this.state.username} onChange={this.handleChange} />
+                                <input type="password" placeholder="Password" name="Password" className="dpm-input-field" value={this.state.password} onChange={this.handleChange} />
+                                <button type="button" className="dpm-login-btn-area" onClick={this.login}>Log In</button>
                             </form>}
-                            {showDetails && <button type="button" className="login-btn-area" onClick={this.onPageOpen}>Page Property</button>}
+                            {showDetails && <button type="button" className="dpm-login-btn-area" onClick={this.onPageOpen}>Page Property</button>}
 
                         </div>
                         {showError && <span id="logInError"> Invalid username & password.</span>}
                     </div>}
 
-                    <div onClick={this.chackToken} className="toggle-btn-area"><span className="plus-icon-area">+</span></div>
+                    <div onClick={this.chackToken} className="dpm-toggle-btn-area"><span className="dpm-plus-icon-area">+</span></div>
                     
                 </section>
 
@@ -74,31 +74,31 @@ class Ribbon extends Component {
                     <Modal.Body style={{ marginLeft: '20%' }}>
 
                         <div className="form-group row">
-                            <div className="col-md-6 row">Page Name</div>
+                            <div className="col-md-6">Page Name</div>
                             <div className="col-md-6">
                                 <input type="text" className="from-control" readOnly value={this.state.PageName} ></input>
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-md-6 row">Page Display Name</div>
+                            <div className="col-md-6">Page Display Name</div>
                             <div className="col-md-6">
                                 <input type="text" className="from-control" readOnly id="txtPageDisplayName" value={this.state.PageDisplayName} ></input>
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-md-6 row">Discription</div>
+                            <div className="col-md-6">Discription</div>
                             <div className="col-md-6">
                                 <input type="text" className="from-control" readOnly id="txtDiscription" value={this.state.Discription} ></input>
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-md-6 row">Searchable</div>
+                            <div className="col-md-6">Searchable</div>
                             <div className="col-md-6">
                                 <input type="checkbox" className="from-control" id="chkSearchable" defaultChecked={this.state.searchable} onChange={this.handleChangeChk}></input>
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-md-6 row">Virtual</div>
+                            <div className="col-md-6">Virtual</div>
                             <div className="col-md-6">
                                 <input className="from-control" type="checkbox" id="chkVirtual" defaultChecked={this.state.virtual} onChange={this.handleChangeChk12}></input>
                             </div>
@@ -194,7 +194,6 @@ class Ribbon extends Component {
                     PageName: item.data.nodeName,
                     PageDisplayName: item.data.displayName,
                     Discription: item.data.description,
-                    //uuid: item.data.UUID
                 });
             } else {
                 this.setState({
