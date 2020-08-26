@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.togglenav-section-area {
+    position: fixed;
+    width: 100%;
+}
+
+.nav-area {
+    background: black;
+    padding: 1.25rem;
+}
+
+.input-field {
+    height: 25px;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    border: 1px solid #CED4DA;
+    border-radius: .25rem;
+    margin-right: 8px;
+    width: 250px;
+}
+
+    .input-field:focus,
+    .login-btn-area:focus {
+        outline: none;
+    }
+
+.login-btn-area {
+    height: 39px;
+    border-radius: .25rem;
+    border: 1px solid #1baa81;
+    padding: 0px 15px;
+    background-color: #1baa81;
+    color: white;
+}
+
+.toggle-btn-area {
+    background: black;
+    padding: 20px;
+    border-radius: 0px 0px 0px 50px;
+    padding: 10px 15px;
+    width: fit-content;
+    float: right;
+    color: white;
+}
+
+.plus-icon-area {
+    position: relative;
+    top: -5px;
+    left: 3px;
+}
+
+#logInError {
+    color: red;
+}
+
+.modal-content {
+    margin-left: -6px;
+}
+
+.modal-90w {
+    max-width: 100% !important;
+}

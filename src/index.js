@@ -5,12 +5,15 @@ import Ribbon from './test';
 import * as serviceWorker from './serviceWorker';
 
 
+
   // <React.StrictMode>
     // <App />
   // </React.StrictMode>,
   //document.getElementById('root')
      //ReactDOM.render(<App />, document.getElementById("root"));
-   ReactDOM.render(<Ribbon />, document.getElementById("root123"));
+
+
+ReactDOM.render(<Ribbon />, document.getElementById('root123'));
 
 
 // If you want your app to work offline and load faster, you can change

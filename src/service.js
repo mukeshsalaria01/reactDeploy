@@ -41,7 +41,6 @@ class ItemService {
     }
 
     async login(newitem) {
-        debugger
         return fetch('https://wakanda-cm.developerprogram.org/api/v1/login', {
             method: "post",
             mode: "cors",
@@ -60,8 +59,6 @@ class ItemService {
                 this.handleError(error);
             });
     }
-
-
 
     async pageProperty() {
         return fetch('https://wakanda-cm.developerprogram.org/api/v1/channel/page/show?uuid=7c41b988-ba6f-4785-9750-6075e18a3c1c', {

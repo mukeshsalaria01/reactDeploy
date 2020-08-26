@@ -1,13 +1,12 @@
 
 import React, { Component } from 'react';
 import ItemService from './service';
-import { Button, Modal } from 'react-bootstrap';
-
+import { Modal } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 class Ribbon extends Component {
 
     constructor(props) {
         super(props);
-
 
         this.itemService = new ItemService();
         this.setShow = this.setShow.bind(this);
@@ -20,10 +19,10 @@ class Ribbon extends Component {
             showDetails: false,
             showLogin: false,
             showError: false,
-            open: false,
             show: false,
             searchable: false,
-            virtual: false
+            virtual: false,
+            open: false
         }
     }
 
@@ -39,42 +38,28 @@ class Ribbon extends Component {
         const showLogin = this.state.showLogin;
         const showError = this.state.showError;
         const show = this.state.show;
+        const open = this.state.open;
 
         return (
             <>
-                <div className="collapse" id="collapseExample">
-                    <div className="card bg-dark text-white rounded-0">
-                        <div className="container">
-                            <div className="card-body">
+                <section className="togglenav-section-area">
+                    {open && <div className="nav-area">
+                        <div align="center">
 
-                                {showLogin && <form id="login" >
-                                    <div className="form-row">
-                                        <div className="col">
-                                            <input type="text" className="form-control" name="Username" placeholder="User Name" value={this.state.username}
-                                                onChange={this.handleChange} />
-                                        </div>
-                                        <div className="col">
-                                            <input type="password" className="form-control" name="Password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
-                                        </div>
-                                        <div className="col">
-                                            <button type="button" id="btnLogin1" onClick={this.login} style={{ backgroundColor: '#1baa81' }} className="btn btn-secondary">Log In</button>
-                                        </div>
-                                    </div>
-                                    {showError && <span id="logInError"> Invalid username & password.</span>}
+                            {showLogin && <form id="login" >
+                            <input type="text" placeholder="User Name" name="Username" className="input-field" value={this.state.username} onChange={this.handleChange} />
+                            <input type="password" placeholder="Password" name="Password" className="input-field" value={this.state.password} onChange={this.handleChange} />
+                            <button type="button" className="login-btn-area" onClick={this.login}>Log In</button>
+                            </form>}
+                            {showDetails && <button type="button" className="login-btn-area" onClick={this.onPageOpen}>Page Property</button>}
 
-                                </form>}
-
-                                {showDetails && <div className="dropdown"><button className="btn btn-secondary" style={{ backgroundColor: '#1baa81' }} type="button" onClick={this.onPageOpen}>Page Property</button></div>}
-
-                            </div>
                         </div>
-                    </div>
-                </div>
-                <button onClick={this.chackToken} className="btn bg-dark text-white float-right collapse-btn" type="button" id="collapse-button" data-toggle="collapse"
-                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
-                    <span >+</span>
-                </button>
+                        {showError && <span id="logInError"> Invalid username & password.</span>}
+                    </div>}
 
+                    <div onClick={this.chackToken} className="toggle-btn-area"><span className="plus-icon-area">+</span></div>
+                    
+                </section>
 
                 <Modal
                     show={show}
@@ -151,6 +136,9 @@ class Ribbon extends Component {
     }
 
     chackToken() {
+        this.setState({
+            open: !this.state.open
+        });
         this.itemService.validateToken().then(item => {
             if (item != undefined && item.username != null) {
                 window.localStorage.refreshToken = item.refreshToken;
@@ -190,20 +178,16 @@ class Ribbon extends Component {
     onPageOpen() {
         this.itemService.pageProperty().then(item => {
             if (item) {
-
                 if (item.data.searchable) {
                     this.setState({
                         searchable: true
                     });
                 }
-
-
                 if (item.data.virtual) {
                     this.setState({
                         virtual: true
                     });
                 }
-
                 this.setState({
                     show: true,
                     PageName: item.data.nodeName,
