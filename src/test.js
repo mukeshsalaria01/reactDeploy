@@ -122,7 +122,8 @@ class Ribbon extends Component {
                 window.localStorage.token = item.accessToken;
                 this.setState({
                     showDetails: true,
-                    showLogin: false
+                    showLogin: false,
+                    showError:false
                 });
             }
             else {
